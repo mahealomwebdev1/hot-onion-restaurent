@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
-import './Breakfast.css'
-import breakFastData from '../BreakfastData';
-import breakfastData from '../BreakfastData';
-const Breakfast = () => {
-    const totalBreakfast= breakfastData.slice(0,6);
-    const [breakfast, setBreakfast]= useState(totalBreakfast);
+import './Breakfast.css';
+import breakfastDataLoad from '../Fooddata/BreakFastDataLoad';
 
-    
+ 
+// const breakfastData= breakfastDataLoad;
+// const [breakfasts, setBreakfasts] =useState(breakfastData);
 
+
+
+const Breakfast = (props) => {
+    const { name, img, category, price}= props.breakfast;
+
+   
     return (
-       
-        <div>
-            <h1>Your breakfast is ready to serve</h1>
+        <div className="breakfast-cart">
+            <div className="card text-center card-area" id="b-card">
+                <img src={img} className="card-img-top" alt=""/>
+                <h4 className="class-title"> {name}</h4>
+                <h5> $ {price}</h5>
 
-            <img src={breakfast.img} alt=""/>
+            </div>
+{/* 
+            <div>
+           
+            {
+                breakfasts.map(breakfast => <Breakfast breakfast={breakfast}></Breakfast>)
+            }
+        </div> */}
         </div>
     );
 };
 
 export default Breakfast;
-

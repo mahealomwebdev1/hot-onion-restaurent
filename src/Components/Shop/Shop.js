@@ -1,23 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Shop.css';
-import Card from '../Card/Card';
+import breakfastDataLoad from '../Fooddata/BreakFastDataLoad';
 import Breakfast from '../Breakfast/Breakfast';
-
+import lunchDataLoad from '../Fooddata/LunchDataLoad';
+import Lunch from '../Lunch/Lunch';
+import dinnerDataLoad from '../Fooddata/DinnerDataLoad';
+import Dinner from '../Dinner/Dinner';
 
 
 const Shop = () => {
+    
+    const breakfastData= breakfastDataLoad;
+    const [breakfasts, setBreakfasts] =useState(breakfastData);
+
+    const lunchData= lunchDataLoad;
+    const [lunches, setLunches]=useState(lunchData)
+
+    const dinnerData= dinnerDataLoad;
+    const [dinners, setdinners]=useState(dinnerData)
     return (
         <div>
-        <div className="shop">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <h1> Best food Waiting for your belly</h1>
+                
+    
+         <div>
+           
+            {
+                breakfasts.map(breakfast => <Breakfast breakfast={breakfast}></Breakfast>)
+            }
+        </div> 
+
+        <div>
+           
+            {
+                lunches.map(lunch => <Lunch lunch={lunch}></Lunch>)
+            }
         </div>
-        <Breakfast></Breakfast>
-        <Card></Card>
+
+        <div>
+           
+            {
+                dinners.map(dinner => <Dinner dinner={dinner}></Dinner>)
+            }
         </div>
+        </div>
+        
     );
 };
 

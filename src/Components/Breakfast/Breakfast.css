@@ -1,0 +1,24 @@
+.card-area{
+    width: 350px;
+    height: 500px;
+    float: left;
+    margin-left: 12px;
+    margin-right: 20px;
+    margin-top: 50px;
+
+    
+}
+.breakfast-cart{
+    margin: 25px;
+    
+    
+ }
+ #b-card{
+     border: none;
+ }
+ .card:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 10px lightgray;
+}
+    
+ 
